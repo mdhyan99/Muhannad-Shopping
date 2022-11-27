@@ -1,0 +1,43 @@
+.link1  {
+    font-size: 17px;
+    display: flex;
+    justify-content: space-around;
+margin-bottom: 20px;
+padding: 8px;
+}
+.link  {
+    color:rgb(142, 112, 112);
+    text-decoration: none;
+}
+.link:hover  {
+    color:rgb(235, 188, 188);
+}
+.link1 .active {
+    color:rgb(239, 17, 17);
+
+}
+
+@media (max-width: 350px) {
+
+    .link1  {
+        font-size: 17px;
+        display: flex;
+        flex-direction: column;
+    }
+    .nav{
+         display: flex;
+        flex-direction: column; 
+    }
+    .spanText{
+        font-size: 11px;
+    }
+    .searchInput{
+        width: 100px;
+    }
+    .produktname{
+        font-size: 13px 
+    }
+    .korp{
+        font-size: 10px;
+    }
+}
