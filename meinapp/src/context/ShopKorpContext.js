@@ -13,13 +13,13 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   const [isOpen, setIsOpen] = useState(false);
   const [searchInput,setSearchInput] =useState("")
 
-  const [cartItems, setCartItems] = useState(initialCartItems);
+  const [korbProducts, setKorbProducts] = useState(initialCartItems);
 
   useEffect(() => {
-    localStorage.setItem("shopping-cart", JSON.stringify(cartItems));
-  }, [cartItems]);
+    localStorage.setItem("shopping-cart", JSON.stringify(korbProducts));
+  }, [korbProducts]);
 
-  const cartQuantity = cartItems.reduce(
+  const cartQuantity = korbProducts.reduce(
     (quantity, item) => item.quantity + quantity,
     0
   );
@@ -27,14 +27,14 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   const openCart = () => {
     setIsOpen(true);
   };
-  const closeCart = () => {
+  const closeCart= () => {
     setIsOpen(false);
   };
-  const getItemQuantity = (id) => {
-    return cartItems.find((item) => item.id === id)?.quantity || 0;
+  const getProductMenge = (id) => {
+    return korbProducts.find((item) => item.id === id)?.quantity || 0;
   };
   const increaseCartQuantity = (id) => {
-    setCartItems((currItems) => {
+    setKorbProducts((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
         return [...currItems, { id, quantity: 1 }];
       } else {
@@ -49,7 +49,7 @@ const initialCartItems = localStorage.getItem("shopping-cart")
     });
   };
   const decreaseCartQuantity = (id) => {
-    setCartItems((currItems) => {
+    setKorbProducts((currItems) => {
       if (currItems.find((item) => item.id === id)?.quantity === 1) {
         return currItems.filter((item) => item.id !== id);
       } else {
@@ -65,7 +65,7 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   };
 
   const removeFromCart = (id) => {
-    setCartItems((currItems) => currItems.filter((item) => item.id !== id));
+    setKorbProducts((currItems) => currItems.filter((item) => item.id !== id));
   };
    const handleChange = (elem) => {
      setSearchInput(elem.target.value);
@@ -73,14 +73,14 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   return (
     <WarenKorpContext.Provider
       value={{
-        getItemQuantity,
+        getProductMenge,
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
         openCart,
         closeCart,
         cartQuantity,
-        cartItems,
+        korbProducts,
         searchInput,
         handleChange,
       }}

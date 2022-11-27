@@ -6,10 +6,9 @@ import KorpProduct from "./KorpPruduct";
 import storeItems from "../date/Products.json";
 
 const Warenkorp = ({ isOpen }) => {
-    const { closeCart, cartItems } =useContext(WarenKorpContext);
+    const { closeCart, korbProducts } =useContext(WarenKorpContext);
     return (
-        // isOpen wenn warenkorb ist nicht leer dann kann mann sehen
-        // closCart wenn warenkorb ist  leer dann kann mann nicht sehen
+        
 
         <Offcanvas show={isOpen} onHide={closeCart} placement="end">
             <Offcanvas.Header closeButton>
@@ -19,12 +18,12 @@ const Warenkorp = ({ isOpen }) => {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <Stack gap={3}>
-                    {cartItems.map((item) => (
+                    {korbProducts.map((item) => (
                         <KorpProduct key={item.id} {...item} />
                     ))}
                     <div className="ms-auto fw-bold spanText">
                         Total:
-                        {cartItems.reduce((total, cartItem) => {
+                        {korbProducts.reduce((total, cartItem) => {
                             const item = storeItems.find(
                                 (i) => i.id === cartItem.id
                             );

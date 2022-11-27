@@ -6,13 +6,13 @@ import { useContext } from "react";
 
 const StoreItem = ({ id, text, price, picture }) => {
     const {
-        getItemQuantity,
+        getProductMenge,
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
     } =useContext (WarenKorpContext);
 
-    const quantity = getItemQuantity(id);
+    const quantity = getProductMenge(id);
 
     return (
         <Card className="h-100">
