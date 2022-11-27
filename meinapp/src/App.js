@@ -10,9 +10,11 @@ import Header from "./components/Header";
 import Kinder from "./components/Kinder";
 import Kontakt from "./components/Kontakt";
 import Footer from "./components/Footer";
+import ShopKorpContext from './context/ShopKorpContext';
 function App() {
   return (
 <div>
+<ShopKorpContext>
             <Header />
             <Navbar />
 
@@ -26,6 +28,7 @@ function App() {
                     <Route path="/footer" element={<Footer />} />
                 </Routes>
             </Container>
+        </ShopKorpContext>
         </div>
   );
 }

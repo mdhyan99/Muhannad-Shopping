@@ -1,9 +1,29 @@
-import React from 'react';
-
-export default function Kinder() {
+import React from "react";
+import { Col, Row } from "react-bootstrap";
+import storeItems from "../date/Products.json";
+import StoreItem from "./StoreItem";
+const Kinder= () => {
+  const data_Kinder = storeItems.filter((d) => d.category === "Kinder");
   return (
-    <div>
-      
-    </div>
+    <>
+       <div className="produktname" style={{textAlign:"center"}}>
+   <h2 style={{color:"coral"}}>Kinder Produkte</h2>
+                <p style={{color:"black"}} className="paragraph">
+                    Unser Kinder-produkt Sortiment umfasst T-shirt, Hosen,
+                    Hemden, Schuhe und vieles mehr! <br /> Alle unserer Produkte
+                    erhalten Sie versandkostenfrei bis vor die Haustür
+                    geliefert.
+                </p>
+   </div>
+      <Row md={2} xs={1} lg={3} className="g-3">
+        {data_Kinder.map((item) => (
+          <Col key={item.id}>
+            <StoreItem {...item} />
+          </Col>
+        ))}
+      </Row>
+    </>
   );
-}
+};
+
+export default Kinder;

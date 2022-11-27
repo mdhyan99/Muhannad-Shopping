@@ -1,17 +1,18 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-// import { useShoppingCart } from "../context/WarenKorpContext";
 import { FiHeart } from "react-icons/fi";
+import { useContext } from "react";
+import { WarenKorpContext } from "../context/ShopKorpContext";
 
 const StoreItem = ({ id, text, price, picture }) => {
-    // const {
-    //     getItemQuantity,
-    //     increaseCartQuantity,
-    //     decreaseCartQuantity,
-    //     removeFromCart,
-    // } = useShoppingCart();
+    const {
+        getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart,
+    } = useContext(WarenKorpContext);
 
-     const quantity =1;
+    const quantity = getItemQuantity(id);
 
     return (
         <Card className="h-100">
@@ -30,11 +31,12 @@ const StoreItem = ({ id, text, price, picture }) => {
                         <FiHeart />
                     </div>
                 </Card.Title>
+
                 <div className="mt-auto">
                     {quantity === 0 ? (
                         <Button
                             className="  w-100"
-                            
+                            onClick={() => increaseCartQuantity(id)}
                         >
                             in den Warenkorp
                         </Button>
@@ -47,41 +49,36 @@ const StoreItem = ({ id, text, price, picture }) => {
                                 className="d-flex align-items-center justify-content-center"
                                 style={{ gap: "0.4rem" }}
                             >
-                               
                                 <Button
-                                   
+                                    onClick={() => decreaseCartQuantity(id)}
                                 >
                                     -
                                 </Button>
 
                                 <div>
                                     <span className="spanText">
-                                         in Warenkorp
+                                        {quantity} in Warenkorp
                                     </span>
                                 </div>
-                                {/* add ein Product  */}
                                 <Button
-                                    
+                                    onClick={() => increaseCartQuantity(id)}
                                 >
                                     +
                                 </Button>
                             </div>
-                            {/* remove alle Products  */}
                             <Button
                                 variant="danger"
                                 size="sm"
-                                
+                                onClick={() => removeFromCart(id)}
                             >
                                 Remove
                             </Button>
                         </div>
-                    )} 
-                </div> 
-           
+                    )}
+                </div>
             </Card.Body>
         </Card>
     );
 };
 
 export default StoreItem;
-    
