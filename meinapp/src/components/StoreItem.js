@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { FiHeart } from "react-icons/fi";
-import { useContext } from "react";
 import { WarenKorpContext } from "../context/ShopKorpContext";
+import { useContext } from "react";
 
 const StoreItem = ({ id, text, price, picture }) => {
     const {
@@ -10,7 +10,7 @@ const StoreItem = ({ id, text, price, picture }) => {
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
-    } = useContext(WarenKorpContext);
+    } =useContext (WarenKorpContext);
 
     const quantity = getItemQuantity(id);
 

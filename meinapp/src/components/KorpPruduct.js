@@ -1,11 +1,11 @@
 import React from "react";
 import { Stack, Button } from "react-bootstrap";
-import { useContext } from "react";
 import { WarenKorpContext } from "../context/ShopKorpContext";
+import { useContext } from "react";
 import storeItems from "../date/Products.json";
 
 const KorpProduct = ({ id, quantity }) => {
-    const { removeFromCart } = useContext(WarenKorpContext);
+    const { removeFromCart } = useContext (WarenKorpContext );
     const item = storeItems.find((i) => i.id === id);
     if (item == null) return null;
     return (
@@ -37,7 +37,7 @@ const KorpProduct = ({ id, quantity }) => {
                     {item.price} €
                 </div>
             </div>
-            <div>{item.price * quantity} €</div>
+            <div>{(item.price * quantity)} €</div>
 
             <Button
                 style={{ fontSize: "10px" }}

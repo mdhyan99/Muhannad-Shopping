@@ -1,14 +1,14 @@
-import { createContext,  useEffect, useState } from "react";
+import { createContext,useContext,  useEffect, useState } from "react";
 import Warenkorp from "../components/WarenKorp";
 
 
 
- export const WarenKorpContext = createContext({});
+ export const WarenKorpContext = createContext();
 const initialCartItems = localStorage.getItem("shopping-cart")
   ? JSON.parse(localStorage.getItem("shopping-cart"))
   : [];
 
-  const ShopKorpContext=(props)=>{
+  const ShopKorpContext=({children})=>{
 
   const [isOpen, setIsOpen] = useState(false);
   const [searchInput,setSearchInput] =useState("")
@@ -71,7 +71,7 @@ const initialCartItems = localStorage.getItem("shopping-cart")
      setSearchInput(elem.target.value);
  };
   return (
-    <ShopKorpContext.Provider
+    <WarenKorpContext.Provider
       value={{
         getItemQuantity,
         increaseCartQuantity,
@@ -85,9 +85,9 @@ const initialCartItems = localStorage.getItem("shopping-cart")
         handleChange,
       }}
     >
-      {props.children}
+      {children}
       <Warenkorp isOpen={isOpen} />
-    </ShopKorpContext.Provider>
+    </WarenKorpContext.Provider>
   );
 };
 

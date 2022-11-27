@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Offcanvas, Stack } from "react-bootstrap";
-import { useContext } from "react";
 import { WarenKorpContext } from "../context/ShopKorpContext";
+
 import KorpProduct from "./KorpPruduct";
 import storeItems from "../date/Products.json";
 
 const Warenkorp = ({ isOpen }) => {
-    const { closeCart, cartItems } = useContext(WarenKorpContext);
+    const { closeCart, cartItems } =useContext(WarenKorpContext);
     return (
         // isOpen wenn warenkorb ist nicht leer dann kann mann sehen
         // closCart wenn warenkorb ist  leer dann kann mann nicht sehen
@@ -31,7 +31,7 @@ const Warenkorp = ({ isOpen }) => {
                             return (
                                 total + (item?.price || 0) * cartItem.quantity
                             );
-                        }, 0)}
+                        }, 0).toFixed(2)}
                         €
                     </div>
                 </Stack>
