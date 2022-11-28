@@ -30,9 +30,11 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   const closeCart= () => {
     setIsOpen(false);
   };
+  // für Pruductmenge in warenkorp
   const getProductMenge = (id) => {
     return korbProducts.find((item) => item.id === id)?.quantity || 0;
   };
+  // für + button und (ind den Warenkorp) Button
   const increaseCartQuantity = (id) => {
     setKorbProducts((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
@@ -48,6 +50,7 @@ const initialCartItems = localStorage.getItem("shopping-cart")
       }
     });
   };
+  // für - button und (ind den Warenkorp) Button
   const decreaseCartQuantity = (id) => {
     setKorbProducts((currItems) => {
       if (currItems.find((item) => item.id === id)?.quantity === 1) {
@@ -63,10 +66,11 @@ const initialCartItems = localStorage.getItem("shopping-cart")
       }
     });
   };
-
+// für delete from Warenkorp
   const removeFromCart = (id) => {
     setKorbProducts((currItems) => currItems.filter((item) => item.id !== id));
   };
+  //für SearchInput
    const handleChange = (elem) => {
      setSearchInput(elem.target.value);
  };

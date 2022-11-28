@@ -1,12 +1,14 @@
 import React from "react";
 import storeItems from "../date/Products.json";
+import { WarenKorpContext } from "../context/ShopKorpContext";
+import { useContext } from "react";
+import { Col, Row } from "react-bootstrap";
+
+// import  Components
 import Frauen from "./Frauen";
 import Herren from "./Herren";
 import Kinder from "./Kinder";
 import Footer from "./Footer";
-import { WarenKorpContext } from "../context/ShopKorpContext";
-import { useContext } from "react";
-import { Col, Row } from "react-bootstrap";
 import StoreItem from "./StoreItem";
 
 function StartSeite() {
