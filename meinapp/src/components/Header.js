@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Button } from "react-bootstrap";
 
+import { BiUser } from "react-icons/bi";
 import { useContext } from "react";
 import { WarenKorpContext } from "../context/ShopKorpContext";
 
@@ -23,7 +24,7 @@ function Header() {
                         fontSize: "20px",
                     }}
                 >
-                  
+                    <BiUser />
                 </div>
 
                 <Navbar.Brand
