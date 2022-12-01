@@ -30,7 +30,7 @@ const Warenkorp = ({ isOpen }) => {
                             return (
                                 total + (item?.price || 0) * cartItem.quantity
                             );
-                        }, 0).toFixed(2)}
+                        }, 0)}
                         €
                     </div>
                 </Stack>
