@@ -1,9 +1,12 @@
 import { createContext,  useEffect, useState } from "react";
-import Warenkorp from "../components/WarenKorp";
+import Warenkorp from "../components/WarenKorb";
+import product from "../date/Products.json"
 
 
 
  export const WarenKorpContext = createContext();
+
+
 const initialCartItems = localStorage.getItem("shopping-cart")
   ? JSON.parse(localStorage.getItem("shopping-cart"))
   : [];
@@ -12,6 +15,9 @@ const initialCartItems = localStorage.getItem("shopping-cart")
 
   const [isOpen, setIsOpen] = useState(false);
   const [searchInput,setSearchInput] =useState("")
+  const [like, setLike] = useState(0);
+  const [unlike, setUnLike] = useState(0);
+  const [data,setData]=useState(product)
 
   const [korbProducts, setKorbProducts] = useState(initialCartItems);
 
@@ -33,15 +39,20 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   // für Pruductmenge in warenkorp
   const getProductMenge = (id) => {
     return korbProducts.find((item) => item.id === id)?.quantity || 0;
+    // wenn item.id === id  return quantity wenn nicht return 0
   };
-  // für + button und (ind den Warenkorp) Button
-  const increaseCartQuantity = (id) => {
+  // für  (in den Warenkorp) Button und + button 
+  const erhohenWarenKorbMenge= (id) => {
     setKorbProducts((currItems) => {
+      // curItems ist ein Array
       if (currItems.find((item) => item.id === id) == null) {
+        // wenn Product nicht in warenkorb  füg hin und mach quantity 1 
         return [...currItems, { id, quantity: 1 }];
       } else {
+        
         return currItems.map((item) => {
           if (item.id === id) {
+            // wenn Product in warenkorb  füg hin und mach quantity + 1 
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
@@ -50,14 +61,17 @@ const initialCartItems = localStorage.getItem("shopping-cart")
       }
     });
   };
-  // für - button und (ind den Warenkorp) Button
-  const decreaseCartQuantity = (id) => {
+  // für - button
+  const verringernWarenKorbMenge = (id) => {
     setKorbProducts((currItems) => {
-      if (currItems.find((item) => item.id === id)?.quantity === 1) {
+      if (currItems.find((item) => item.id === id)?.quantity == null) {
+        // wenn Product nicht in warenkorb  return die andere Product
         return currItems.filter((item) => item.id !== id);
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
+            // wenn Product in warenkorb  delete die Product  und mach quantity -1
+
             return { ...item, quantity: item.quantity - 1 };
           } else {
             return item;
@@ -67,26 +81,38 @@ const initialCartItems = localStorage.getItem("shopping-cart")
     });
   };
 // für delete from Warenkorp
-  const removeFromCart = (id) => {
+  const entfernVonWarenkorb = (id) => {
+    // delete die product gleiche id und return die andere Producte  die andere id hat
     setKorbProducts((currItems) => currItems.filter((item) => item.id !== id));
   };
   //für SearchInput
    const handleChange = (elem) => {
      setSearchInput(elem.target.value);
  };
+ 
+  const handelLike = (event) => {
+    console.log(event.target);
+
+  setLike(like + 1);
+ };
   return (
     <WarenKorpContext.Provider
       value={{
         getProductMenge,
-        increaseCartQuantity,
-        decreaseCartQuantity,
-        removeFromCart,
+        erhohenWarenKorbMenge,
+        verringernWarenKorbMenge,
+        entfernVonWarenkorb,
         openCart,
         closeCart,
         cartQuantity,
         korbProducts,
         searchInput,
         handleChange,
+        handelLike,
+        like,
+        unlike,
+        setUnLike,
+        data,
       }}
     >
       {children}

@@ -11,7 +11,11 @@ import Header from "./components/Header";
 import Kinder from "./components/Kinder";
 import Kontakt from "./components/Kontakt";
 import Footer from "./components/Footer";
+import Product from "./components/Product";
+
+// import von context
 import ShopKorpContext from './context/ShopKorpContext';
+
 function App() {
   return (
 <div>
@@ -26,6 +30,7 @@ function App() {
                     <Route path="/frauen" element={<Frauen />} />
                     <Route path="/kinder" element={<Kinder />} />
                     <Route path="/kontakt" element={<Kontakt />} />
+                    <Route path="/product/:id" element={<Product />} />
                     <Route path="/footer" element={<Footer />} />
                 </Routes>
             </Container>

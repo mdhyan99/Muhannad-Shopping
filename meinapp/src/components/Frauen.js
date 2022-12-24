@@ -1,12 +1,17 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import storeItems from "../date/Products.json";
+
+import product from "../date/Products.json";
 import StoreItem from "./StoreItem";
+
+
 const Frauen= () => {
-  const data_Frauen = storeItems.filter((d) => d.category === "Frauen");
+  const data_Frauen = product.filter((d) => d.category === "Frauen"); 
+  // zeigt uns mit filter  nur Producte die mit category Frauen
   return (
     <>
-       <div className="produktname" style={{textAlign:"center"}}>
+
+  <div className="produktname" style={{textAlign:"center"}}>
    <h2 style={{color:"coral"}}>Frauen Produkte</h2>
                 <p style={{color:"black" }} >
                     Unser Frauen-produkt Sortiment umfasst T-shirt, Hosen,
@@ -15,10 +20,13 @@ const Frauen= () => {
                     geliefert.
                 </p>
    </div>
-      <Row md={2} xs={1} lg={3} className="g-3">
+
+{/* hier zegt uns die Produckt was von StoreItem kommt */}
+      <Row md={3} xs={2} lg={4} className="g-3">
         {data_Frauen.map((item) => (
           <Col key={item.id}>
             <StoreItem {...item} />
+            {/* hier  item als props genuzt  */}
           </Col>
         ))}
       </Row>

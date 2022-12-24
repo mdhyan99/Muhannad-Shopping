@@ -1,5 +1,5 @@
 import React from "react";
-import storeItems from "../date/Products.json";
+import product from "../date/Products.json";
 import { WarenKorpContext } from "../context/ShopKorpContext";
 import { useContext } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -23,7 +23,7 @@ function StartSeite() {
         </>
     ) : (
         <Row md={2} xs={1} lg={4} className="g-3">
-            {storeItems
+            {product
                 .filter((el) =>
                     el.text.toLowerCase().includes(searchInput.toLowerCase())
                 )

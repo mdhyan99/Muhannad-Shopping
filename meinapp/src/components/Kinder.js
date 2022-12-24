@@ -1,9 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import storeItems from "../date/Products.json";
+import product from "../date/Products.json";
 import StoreItem from "./StoreItem";
 const Kinder= () => {
-  const data_Kinder = storeItems.filter((d) => d.category === "Kinder");
+  const data_Kinder = product.filter((d) => d.category === "Kinder");
+    // zeigt uns mit filter  nur Producte die mit category Kinder
   return (
     <>
        <div className="produktname" style={{textAlign:"center"}}>
@@ -15,10 +16,12 @@ const Kinder= () => {
                     geliefert.
                 </p>
    </div>
+   {/* hier zegt uns die Produckt was von StoreItem kommt */}
       <Row md={2} xs={1} lg={3} className="g-3">
         {data_Kinder.map((item) => (
           <Col key={item.id}>
             <StoreItem {...item} />
+                {/* hier  item als props genuzt  */}
           </Col>
         ))}
       </Row>

@@ -2,11 +2,11 @@ import React from "react";
 import { Stack, Button } from "react-bootstrap";
 import { WarenKorpContext } from "../context/ShopKorpContext";
 import { useContext } from "react";
-import storeItems from "../date/Products.json";
+import product from "../date/Products.json";
 
 const KorpProduct = ({ id, quantity }) => {
-    const { removeFromCart } = useContext (WarenKorpContext );
-    const item = storeItems.find((i) => i.id === id);
+    const { entfernVonWarenkorb } = useContext (WarenKorpContext );
+    const item = product.find((i) => i.id === id);
     if (item == null) return null;
     return (
         <Stack
@@ -43,7 +43,7 @@ const KorpProduct = ({ id, quantity }) => {
                 style={{ fontSize: "10px" }}
                 variant="outline-danger"
                 size="sm"
-                onClick={() => removeFromCart(item.id)}
+                onClick={() => entfernVonWarenkorb(item.id)}
             >
                 &times;
             </Button>

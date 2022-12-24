@@ -6,7 +6,9 @@
         "category": "Herren",
         "text": "Herren T-Shirt",
         "price": 13.99,
-        "picture": "/imgs/t-shirt.jpg"
+        "picture": "/imgs/t-shirt.jpg",
+        "like":0,
+        "unlike":0
     },
     
     {
@@ -14,14 +16,18 @@
       "category": "Herren",
       "text": "Herren unter-Hemd",
       "price": 8.99,
-      "picture": "/imgs/unterhemd.jpg"
+      "picture": "/imgs/unterhemd.jpg",
+      "like":0,
+        "unlike":0
     },
     {
         "id": 3 ,
         "category": "Herren",
         "text": "Herren Hemd",
         "price": 18.99,
-        "picture": "/imgs/Hemd.jpg"
+        "picture": "/imgs/Hemd.jpg",
+        "like":0,
+        "unlike":0
     },
   
     {
@@ -29,7 +35,9 @@
         "category": "Herren",
         "text": "Herren Hose",
         "price": 28.99,
-        "picture": "/imgs/Hose.jpeg"
+        "picture": "/imgs/Hose.jpeg",
+        "like":0,
+        "unlike":0
     },
   
     {
@@ -37,7 +45,9 @@
         "category": "Herren",
         "text": "Herren unter-Hose",
         "price": 6.99,
-        "picture": "/imgs/unterhose.webp"
+        "picture": "/imgs/unterhose.webp",
+        "like":0,
+        "unlike":0
     },
   
     {
@@ -45,7 +55,9 @@
         "category": "Herren",
         "text": "Herren Jake",
         "price": 36.99,
-        "picture": "/imgs/jake.avif"
+        "picture": "/imgs/jake.avif",
+        "like":0,
+        "unlike":0
     },
   
     {
@@ -53,7 +65,9 @@
         "category": "Herren",
         "text": "Herren Schuh",
         "price": 36.99,
-        "picture": "/imgs/schuh.jpeg"
+        "picture": "/imgs/schuh.jpeg",
+        "like":0,
+        "unlike":0
     },
   
     {
@@ -61,14 +75,18 @@
         "category": "Herren",
         "text": "Herren Stiefel",
         "price": 36.99,
-        "picture": "/imgs/Stiefel.jpg"
+        "picture": "/imgs/Stiefel.jpg",
+        "like":0,
+        "unlike":0
     },
     {
       "id": 9 ,
       "category": "Frauen",
       "text": "Frauen T-Shirt",
       "price": 13.99,
-      "picture": "/imgs/frau-t-shirt.jpg"
+      "picture": "/imgs/frau-t-shirt.jpg",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -76,14 +94,18 @@
     "category": "Frauen",
     "text": "Frauen unter-Hemd",
     "price": 8.99,
-    "picture": "/imgs/frau-unterhemd.avif"
+    "picture": "/imgs/frau-unterhemd.avif",
+    "like":0,
+        "unlike":0
   },
   {
       "id": 11 ,
       "category": "Frauen",
       "text": "Frauen Hemd",
       "price": 18.99,
-      "picture": "/imgs/frau-hemd.avif"
+      "picture": "/imgs/frau-hemd.avif",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -91,7 +113,9 @@
       "category": "Frauen",
       "text": "Frauen Hose",
       "price": 28.99,
-      "picture": "/imgs/frau-hose.jpeg"
+      "picture": "/imgs/frau-hose.jpeg",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -99,7 +123,9 @@
       "category": "Frauen",
       "text": "Frauen unter-Hose",
       "price": 6.99,
-      "picture": "/imgs/frau-unterhose.avif"
+      "picture": "/imgs/frau-unterhose.avif",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -107,7 +133,9 @@
       "category": "Frauen",
       "text": "Frauen Jake",
       "price": 36.99,
-      "picture": "/imgs/women.avif"
+      "picture": "/imgs/women.avif",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -115,7 +143,9 @@
       "category": "Frauen",
       "text": "Frauen Schuh",
       "price": 36.99,
-      "picture": "/imgs/frau-schuh.jpeg"
+      "picture": "/imgs/frau-schuh.jpeg",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -123,14 +153,18 @@
       "category": "Frauen",
       "text": "Frauen Stiefel",
       "price": 36.99,
-      "picture": "/imgs/fru-stiefel.jpeg"
+      "picture": "/imgs/fru-stiefel.jpeg",
+      "like":0,
+        "unlike":0
   },
   {
       "id": 17 ,
       "category": "Kinder",
       "text": "Kinder T-Shirt",
       "price": 13.99,
-      "picture": "/imgs/kindtshirt.avif"
+      "picture": "/imgs/kindtshirt.avif",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -138,14 +172,18 @@
     "category": "Kinder",
     "text": "Kinder unter-Hemd",
     "price": 8.99,
-    "picture": "/imgs/kinder-unterhemd.avif"
+    "picture": "/imgs/kinder-unterhemd.avif",
+    "like":0,
+        "unlike":0
   },
   {
       "id": 19 ,
       "category": "Kinder",
       "text": "Kinder Hemd",
       "price": 18.99,
-      "picture": "/imgs/kindhemd.avif"
+      "picture": "/imgs/kindhemd.avif",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -153,7 +191,9 @@
       "category": "Kinder",
       "text": "Kinder Hose",
       "price": 28.99,
-      "picture": "/imgs/kinder-hose.webp"
+      "picture": "/imgs/kinder-hose.webp",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -161,7 +201,9 @@
       "category": "Kinder",
       "text": "Kinder unter-Hose",
       "price": 6.99,
-      "picture": "/imgs/kinder-unterhose.jpg"
+      "picture": "/imgs/kinder-unterhose.jpg",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -169,7 +211,9 @@
       "category": "Kinder",
       "text": "Kinder Jake",
       "price": 36.99,
-      "picture": "/imgs/kinder-jacke.jpg"
+      "picture": "/imgs/kinder-jacke.jpg",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -177,7 +221,9 @@
       "category": "Kinder",
       "text": "Kinder Schuh",
       "price": 36.99,
-      "picture": "/imgs/kinder-schuh.jpg"
+      "picture": "/imgs/kinder-schuh.jpg",
+      "like":0,
+        "unlike":0
   },
   
   {
@@ -185,7 +231,9 @@
       "category": "Kinder",
       "text": "Kinder Stiefel",
       "price": 36.99,
-      "picture": "/imgs/kind-stiefl.avif"
+      "picture": "/imgs/kind-stiefl.avif",
+      "like":0,
+        "unlike":0
   }
   ]
   

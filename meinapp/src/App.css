@@ -16,6 +16,16 @@ padding: 8px;
     color:rgb(239, 17, 17);
 
 }
+.likeIcon{
+    
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.likeIcon button{border: none;
+background-color: white; }
 
 @media (max-width: 350px) {
 
