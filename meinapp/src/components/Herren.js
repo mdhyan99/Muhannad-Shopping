@@ -13,10 +13,8 @@ const Herren= () => {
    <div className="produktname" style={{textAlign:"center"}}>
    <h2  style={{color:"coral"}}>Herren Produkte</h2>
                 <p style={{color:"black"}} >
-                    Unser Herren-produkt Sortiment umfasst T-shirt, Hosen,
-                    Hemden, Schuhe und vieles mehr! <br /> Alle unserer Produkte
-                    erhalten Sie versandb kostenfrei bis vor die Haustür
-                    geliefert.
+                ميرا   من تونس 
+                ميرا   من تونس 
                 </p>
    </div>
 
