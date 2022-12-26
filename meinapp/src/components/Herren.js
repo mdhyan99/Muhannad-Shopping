@@ -13,9 +13,9 @@ const Herren= () => {
    <div className="produktname" style={{textAlign:"center"}}>
    <h2  style={{color:"coral"}}>Herren Produkte</h2>
                 <p style={{color:"black"}} >
-                ميرا   من تونس 
-                ميرا   من تونس 
-                </p>
+                مروة
+                يا احلا اميرة
+                </p>   دعيت الى ربي يبعتلي بنت تكون تخاف ربها يارب تكوني انتي يلي الله بعتلي ياكي 
    </div>
 
 {/* hier zegt uns die Produckt was von StoreItem kommt */}
