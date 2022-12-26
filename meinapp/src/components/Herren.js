@@ -12,11 +12,12 @@ const Herren= () => {
 
    <div className="produktname" style={{textAlign:"center"}}>
    <h2  style={{color:"coral"}}>Herren Produkte</h2>
-                <p style={{color:"black"}} >
-                مروة
-                يا احلا اميرة
-                </p>دعيت الى ربي يبعتلي بنت تكون تخاف ربها يارب تكوني انتي يلي الله
-                بعتك وتكوني من نصيبي 
+   <p style={{color:"black"}} >
+                    Unser Herren-produkt Sortiment umfasst T-shirt, Hosen,
+                    Hemden, Schuhe und vieles mehr! <br /> Alle unserer Produkte
+                    erhalten Sie versandb kostenfrei bis vor die Haustür
+                    geliefert.
+                </p>
    </div>
 
 {/* hier zegt uns die Produckt was von StoreItem kommt */}
