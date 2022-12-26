@@ -20,7 +20,7 @@ const Herren= () => {
    </div>
 
 {/* hier zegt uns die Produckt was von StoreItem kommt */}
-      <Row md={3} xs={2} lg={4} className="g-3">
+      <Row md={3} xs={1} lg={4} className="g-3">
         {data_herren.map((item) => (
           <Col key={item.id}>
             <StoreItem {...item} />
