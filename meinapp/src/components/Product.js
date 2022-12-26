@@ -2,10 +2,15 @@ import React from "react";
 import { useContext } from "react";
 import { useParams } from 'react-router-dom' 
 import { WarenKorpContext } from "../context/ShopKorpContext";
+import StoreItem from "./StoreItem";
+import { Col, Row } from "react-bootstrap";
 
 
+import "../App.css";
 
-export default function Product() {
+
+const Product = () =>{
+
   const { data } = useContext(WarenKorpContext);
   //  const item =product.find((i) => i.id === id);
 
@@ -13,13 +18,22 @@ export default function Product() {
  console.log(data);
  const product= data.find((i) => i.id === +id)
     return (
-        <div style={{backgroundColor:"red"}}>
-            
-       {
-       product.text
-       }
-                 
+        <Row md={1} xs={2} lg={2} >
+    
+                    <Col key={product.id} >
+                        <StoreItem  {...product}/>
+       
+                    </Col>
+                    <Col key={product.id} >
+                    <img src={product.picture1} style={{width :"200px",height :"200px",margin:"20px"}} alt={product.picture1} />
+                       <img src={product.picture2} style={{width :"200px",height :"200px",margin:"20px"}} alt={product.picture1}/>
+                       <img src={product.picture3} style={{width :"200px",height :"200px",margin:"20px"}} alt={product.picture1} />
+       
+                    </Col>
+                      
+                
            
-        </div>
+    </Row>
     );
 }
+export default Product

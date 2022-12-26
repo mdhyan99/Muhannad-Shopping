@@ -81,7 +81,7 @@ function Header() {
                                     transform: "translate(25%, 25%)",
                                 }}
                             >
-                                {cartQuantity}
+                        {cartQuantity}
                             </div>
                         </Button>
                     )}

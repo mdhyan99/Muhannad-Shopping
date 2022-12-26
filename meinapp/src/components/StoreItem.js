@@ -5,6 +5,8 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Carousel from 'react-bootstrap/Carousel';
+
 
 // icon 
 import { FiHeart } from "react-icons/fi";
@@ -16,7 +18,7 @@ import { useContext } from "react";
 import "../App.css";
 
 
-const StoreItem = ({ id, text, price, picture }) => {
+const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
     // kommt { id, text, price, picture } von Frauen.js und ... als props 
     const {
         getProductMenge,
@@ -35,11 +37,53 @@ const StoreItem = ({ id, text, price, picture }) => {
         <Link className="link" to={"/product/" + id}> 
  {/* wenn wir auf dem Product drücken   es führt un zu einer Seite Zeigt uns nur Pruduct */}
             <Card className="h-100">
-                <Card.Img
+            <Carousel fade>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={picture1}
+          alt="First slide"
+          style={{ height: '300px' }}
+
+        />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+         
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100 "
+          src={picture2}
+          alt="Second slide"
+          style={{ height: '300px' }}
+        />
+
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+       
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100 h-150"
+          src={picture3}
+          alt="Third slide"
+          style={{ height: '300px' }}
+
+        />
+
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+        
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+                {/* <Card.Img
                     variant="top"
                     src={picture}
                     style={{ height: "400px", objectFit: "cover" }}
-                />
+                /> */}
 
                 <Card.Body className="d-flex flex-column">
                     <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
@@ -132,8 +176,13 @@ const StoreItem = ({ id, text, price, picture }) => {
                                 <BiDislike className="likeIcon2" />
                                 {unlike}{" "}
                             </button>
-                            <button>
+                            <button     onClick={(event) => {
+                                    event.preventDefault();
+                                    ;
+                                }}>
+                            <Link className="link" to={"/speicherproduct/" + id}>
                                 <FiHeart />
+                                </Link>
                             </button>
                         </div>
                     </div>

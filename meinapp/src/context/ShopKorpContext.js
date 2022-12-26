@@ -64,7 +64,7 @@ const initialCartItems = localStorage.getItem("shopping-cart")
   // für - button
   const verringernWarenKorbMenge = (id) => {
     setKorbProducts((currItems) => {
-      if (currItems.find((item) => item.id === id)?.quantity == null) {
+      if (currItems.find((item) => item.id === id)?.quantity === 1) {
         // wenn Product nicht in warenkorb  return die andere Product
         return currItems.filter((item) => item.id !== id);
       } else {

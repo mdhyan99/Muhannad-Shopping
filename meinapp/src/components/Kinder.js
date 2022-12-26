@@ -17,7 +17,7 @@ const Kinder= () => {
                 </p>
    </div>
    {/* hier zegt uns die Produckt was von StoreItem kommt */}
-      <Row md={2} xs={1} lg={3} className="g-3">
+      <Row md={3} xs={2} lg={4} className="g-3">
         {data_Kinder.map((item) => (
           <Col key={item.id}>
             <StoreItem {...item} />

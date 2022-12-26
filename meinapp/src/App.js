@@ -12,6 +12,7 @@ import Kinder from "./components/Kinder";
 import Kontakt from "./components/Kontakt";
 import Footer from "./components/Footer";
 import Product from "./components/Product";
+import SpeicherProduct from './components/SpeicherProduct';
 
 // import von context
 import ShopKorpContext from './context/ShopKorpContext';
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/kinder" element={<Kinder />} />
                     <Route path="/kontakt" element={<Kontakt />} />
                     <Route path="/product/:id" element={<Product />} />
+                    <Route path="/speicherproduct/:id" element={<SpeicherProduct />} />
                     <Route path="/footer" element={<Footer />} />
                 </Routes>
             </Container>
