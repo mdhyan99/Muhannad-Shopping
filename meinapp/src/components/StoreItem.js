@@ -5,11 +5,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Carousel from 'react-bootstrap/Carousel';
 
-
-// icon 
-import { FiHeart } from "react-icons/fi";
 import { BiDislike, BiLike } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
@@ -29,6 +25,8 @@ const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
         like,
         unlike,
         setUnLike,
+       
+        selectedPhoto,
     } = useContext(WarenKorpContext);
 
     const quantity = getProductMenge(id);
@@ -36,54 +34,13 @@ const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
     return (
         <Link className="link" to={"/product/" + id}> 
  {/* wenn wir auf dem Product drücken   es führt un zu einer Seite Zeigt uns nur Pruduct */}
-            <Card className="h-100">
-            <Carousel fade>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={picture1}
-          alt="First slide"
-          style={{ height: '300px' }}
-
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-         
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 "
-          src={picture2}
-          alt="Second slide"
-          style={{ height: '300px' }}
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-       
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 h-150"
-          src={picture3}
-          alt="Third slide"
-          style={{ height: '300px' }}
-
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-        
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-                {/* <Card.Img
+             <Card className="h-100">
+            
+                 <Card.Img
                     variant="top"
-                    src={picture}
+                    src={picture2}
                     style={{ height: "400px", objectFit: "cover" }}
-                /> */}
+                /> 
 
                 <Card.Body className="d-flex flex-column">
                     <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
@@ -158,7 +115,7 @@ const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
                             <button
                                 onClick={(event) => {
                                     event.preventDefault();
-                                    handelLike(event);
+                                    handelLike(id);
                                 }}
                             >
                                 <BiLike className="likeIcon1" />
@@ -180,9 +137,7 @@ const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
                                     event.preventDefault();
                                     ;
                                 }}>
-                            <Link className="link" to={"/speicherproduct/" + id}>
-                                <FiHeart />
-                                </Link>
+                            
                             </button>
                         </div>
                     </div>

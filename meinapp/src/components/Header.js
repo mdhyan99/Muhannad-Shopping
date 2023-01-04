@@ -1,14 +1,16 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Button } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
+ 
+import { FiHeart } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
 import { useContext } from "react";
 import { WarenKorpContext } from "../context/ShopKorpContext";
 
 import "../App.css";
 
-function Header() {
+function Header({id}) {
     const { openCart, cartQuantity } = useContext(WarenKorpContext);
 
     const { searchInput, handleChange } = useContext(WarenKorpContext);
@@ -27,7 +29,7 @@ function Header() {
                     <BiUser />
                 </div>
 
-                <Navbar.Brand
+                <section
                     style={{
                         fontSize: "20px",
                         color: "coral",
@@ -39,7 +41,7 @@ function Header() {
                     href="#"
                 >
                     Rayan Shop
-                </Navbar.Brand>
+                </section>
 
                 <input
                     value={searchInput}
@@ -86,7 +88,11 @@ function Header() {
                         </Button>
                     )}
                 </div>
+                <Link className="link" to={"/speicherproduct/" }>
+                                <FiHeart />
+                                </Link>
             </Container>
+
         </Navbar>
     );
 }
