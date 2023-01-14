@@ -14,7 +14,7 @@ import { useContext } from "react";
 import "../App.css";
 
 
-const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
+const StoreItem = ({ id, text, price, picture1,picture2,picture3,activePicture }) => {
     // kommt { id, text, price, picture } von Frauen.js und ... als props 
     const {
         getProductMenge,
@@ -38,7 +38,7 @@ const StoreItem = ({ id, text, price, picture1,picture2,picture3 }) => {
             
                  <Card.Img
                     variant="top"
-                    src={picture2}
+                    src={activePicture}
                     style={{ height: "400px", objectFit: "cover" }}
                 /> 
 

@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
- 
+
 import { FiHeart } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
 import { useContext } from "react";
@@ -10,7 +10,7 @@ import { WarenKorpContext } from "../context/ShopKorpContext";
 
 import "../App.css";
 
-function Header({id}) {
+function Header({ id }) {
     const { openCart, cartQuantity } = useContext(WarenKorpContext);
 
     const { searchInput, handleChange } = useContext(WarenKorpContext);
@@ -83,16 +83,15 @@ function Header({id}) {
                                     transform: "translate(25%, 25%)",
                                 }}
                             >
-                        {cartQuantity}
+                                {cartQuantity}
                             </div>
                         </Button>
                     )}
                 </div>
-                <Link className="link" to={"/speicherproduct/" }>
-                                <FiHeart />
-                                </Link>
+                <Link className="link" to={"/speicherproduct/"}>
+                    <FiHeart />
+                </Link>
             </Container>
-
         </Navbar>
     );
 }
